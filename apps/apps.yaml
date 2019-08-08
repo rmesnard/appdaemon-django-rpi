@@ -1,0 +1,16 @@
+ha_mqtt:
+  module: ha_mqtt
+  class: HAMqtt
+  plugin: mqtt
+  mqtt_namespace: "mqtt"
+  priority: 30
+
+wiegand_app:
+  module: wiegand_app
+  class: WiegandApp
+  plugin: hass
+  hass_namespace: "hass"
+  sqlite_database: "./webdaemon/db.sqlite3"
+  counter_limit: 3
+  pin_size: 999999
+  pin_message: "Votre code est "

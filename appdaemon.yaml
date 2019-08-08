@@ -1,0 +1,26 @@
+log:
+  accessfile: /conf/log/access.log
+  errorfile: /conf/log/error.log
+  logfile: /conf/log/appdaemon.log
+  log_generations: 3
+  log_size: 1000000
+  timezone: Europe/Paris
+appdaemon:
+  threads: 10
+  production_mode: False
+  api_port: 5050
+  plugins:
+    MQTT:
+      type: mqtt
+      namespace: 'mqtt'
+      client_host: 'mqtt.home.lijah.net'
+      client_port: 1883
+      client_id: appdaemon
+
+    HASS:
+      type: hass
+      namespace: 'hass'
+      token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5MTJjYmIwNGYzY2E0YTEzYWZkMjhkNjZhYmM3YzEzOSIsImlhdCI6MTU2MjMzNjQ5MywiZXhwIjoxODc3Njk2NDkzfQ.B1uSYdud18k_Huonx4KhKG0miWU4-KhgPRMRD0vs5bs'
+      ha_url: 'http://ha.home.lijah.net:8123'
+      
+      
