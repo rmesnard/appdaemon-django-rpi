@@ -4,7 +4,12 @@ VOLUME /conf
 EXPOSE 5050
 EXPOSE 7000
 
+RUN apt-get update
+RUN apt-get install libbluetooth-dev
+RUN apt-get install python-dev
+
 RUN pip3 install --upgrade pip
+RUN pip3 install PyBluez
 RUN pip3 install appdaemon
 RUN pip3 install ics
 RUN pip3 install Django
